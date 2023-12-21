@@ -4,15 +4,25 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 //Add your code here
-	let prices=document.querySelectorAll(".item .price");
-	let totalPrice=0;
-	prices.forEach((price)=>{
-		totalPrice+=parseInt(price.textContent);
-	})
-	let tableElement=document.getElementById("itemsTable");
-	let newRow=tableElement.insertRow(-1);
-	let cell=newRow.insertCell(0);
-	cell.innerText=totalPrice;
+	const prices = document.querySelectorAll('.price');
+
+    // Initialize total price
+    let totalPrice = 0;
+
+    // Loop through prices and sum them up
+    prices.forEach(price => {
+      totalPrice += parseFloat(price.textContent);
+    });
+
+    // Create a new row for the total price
+	const table = document.getElementById('itemsTable');
+        const newRow = table.insertRow(-1); // -1 appends the row at the end
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+
+        cell1.textContent = 'Total Price';
+        cell2.textContent = 'RS ' + totalPrice.toFixed(2);
+   
   
 };
 
