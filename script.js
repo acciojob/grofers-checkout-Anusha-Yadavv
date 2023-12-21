@@ -7,7 +7,7 @@ const getSum = () => {
 	let prices=document.querySelectorAll(".item .price");
 	let totalPrice=0;
 	prices.forEach((price)=>{
-		totalPrice+=parseInt(prices.innerText);
+		totalPrice+=parseInt(price.textContent);
 	})
 	let tableElement=document.getElementById("itemsTable");
 	let newRow=tableElement.insertRow(-1);
